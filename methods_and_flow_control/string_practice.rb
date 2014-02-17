@@ -1,23 +1,12 @@
 #!/usr/bin/env ruby
 
-strPrac = "this is a string to practice with"
+str_Practice = "this is a string to practice with"
 
-puts strPrac
-puts strPrac.capitalize
-puts strPrac.upcase
-puts strPrac.capitalize.gsub("string", "'string'")
-puts "The string '"+strPrac+"' has "+strPrac.length.to_s+" characters"
-puts strPrac.downcase.reverse
-puts ("practice " * 3).strip+"!"
-
-=begin
-count =0
-strNew = ""
-while count<3
-  strNew = strNew+"practice "
-  count = count+1
-end
-strNew = strNew[0..-2]+"!"
-puts strNew
-=end
-
+puts str_Practice
+puts str_Practice.capitalize
+puts str_Practice.upcase
+puts str_Practice.capitalize.gsub("string", "'string'")
+puts "The string '" + str_Practice + "' has " + str_Practice.length.to_s + " characters"
+puts str_Practice.reverse
+str_Practice = str_Practice.split
+puts ((str_Practice[5] + " ") * 3).strip + "!"
