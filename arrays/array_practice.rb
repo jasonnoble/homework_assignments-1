@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 
 my_array = (1..10).to_a
-my_array.each { |a| print a, "..." }
-print "\n"
+puts my_array * "..." + "..."
 print "T-"
 print my_array.reverse.join(", ")
 print "...  BLASTOFF!\n"
