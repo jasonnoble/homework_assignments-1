@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+
+class Register
+  def initialize
+    @total = 0
+  end
+  def purchase(purchase_total)
+    @total += purchase_total
+    puts "%01.2f" % @total
+  end
+  def total()
+    puts "%01.2f" % @total
+  end
+  def pay(paid)
+    @total -= paid
+    if @total >= 0
+      puts "Your new total is $#{"%01.2f" % @total}"
+    else
+      puts "Your change is $#{"%01.2f" % (@total*-1)}"
+      @total = 0
+    end
+  end
+end
+
+#Example 1
+register = Register.new
+register.total
+register.purchase(3.78)
+register.total
+register.pay(5.00)
+register.total
+puts
+
+#Example 2
+register = Register.new
+register.total
+register.purchase(3.78)
+register.purchase(5.22)
+register.total
+register.pay(5.00)
+register.total
+register.pay(5.00)
+register.total
+puts
+
