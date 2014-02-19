@@ -1,22 +1,20 @@
 #!/usr/bin/env ruby
 
-str_Fizz = "Fizz"
-str_Buzz = "Buzz"
-count = 0
+@str_fizz = "Fizz"
+@str_buzz = "Buzz"
 numbers = (1..100).to_a
-output = Array.new(100)
 
-while count < 100
-  if numbers[count] % 3 == 0 && numbers[count] % 5 == 0
-    output[count] = str_Fizz + str_Buzz
-  elsif numbers[count] % 3 == 0
-    output[count] = str_Fizz
-  elsif numbers[count] % 5 == 0
-    output[count] = str_Buzz
+def fizz_buzzer(value)
+  if value % 3 == 0 && value % 5 == 0
+    @str_fizz + @str_buzz
+  elsif value % 3 == 0
+    @str_fizz
+  elsif value % 5 == 0
+    fizz_buzzer = @str_buzz
   else
-    output[count] = count+1
+    fizz_buzzer = value
   end
-  count += 1
 end
 
-output.each { |a| puts a}
+fizz_buzz_numbers = numbers.map{|number| fizz_buzzer(number) }
+puts fizz_buzz_numbers
