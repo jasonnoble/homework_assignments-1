@@ -1,9 +1,7 @@
 require 'rspec'
 require './lib/kiddo'
 
-
 describe 'Kiddo' do
-
   specify 'should create Kiddo with accessible interfaces' do
     k1 = Kiddo.new("Ziggy Hardman Murphy", "dinosaur",9)
     expect(k1.get_first_name).to eq("Ziggy")
